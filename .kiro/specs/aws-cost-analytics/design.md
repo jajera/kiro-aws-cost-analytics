@@ -720,7 +720,7 @@ tests/
 
 ### Continuous Integration
 
-GitHub Actions workflow `.github/workflows/ci.yml` runs on push and pull requests to `main`:
+GitHub Actions workflow `.github/workflows/ci.yml` runs on pull requests to `main`:
 
 - Python **3.11** (minimum supported) and **3.14** (latest stable)
 - `pip install -e ".[dev]"` then `pytest -q`
