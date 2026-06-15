@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aws-cost-analytics"
-version = "0.1.0"
+version = "1.0.0"
 description = "Read-only AWS Cost Explorer MCP server and CLI for Bedrock ecosystem and Kiro spend"
 readme = "README.md"
 license = "MIT"
