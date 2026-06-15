@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "aws-cost-analytics": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/jajera/kiro-aws-cost-analytics.git@main",
+        "aws-cost-analytics"
+      ]
+    }
+  }
+}

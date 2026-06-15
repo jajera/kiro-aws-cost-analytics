@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aws-cost-analytics"
+version = "0.1.0"
+description = "Read-only AWS Cost Explorer MCP server and CLI for Bedrock ecosystem and Kiro spend"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "John Ajera" }]
+dependencies = [
+    "boto3>=1.34.0",
+    "mcp>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jajera/kiro-aws-cost-analytics"
+Repository = "https://github.com/jajera/kiro-aws-cost-analytics"
+Issues = "https://github.com/jajera/kiro-aws-cost-analytics/issues"
+
+[project.scripts]
+aws-cost-analytics = "aws_cost_analytics.server:main"
+aws-cost-analytics-cli = "aws_cost_analytics.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aws_cost_analytics"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "hypothesis>=6.82.0",
+    "moto>=4.2.0",
+]
+
+[tool.semantic_release]
+version_variables = ["src/aws_cost_analytics/__init__.py:__version__"]
+version_toml = ["pyproject.toml:project.version"]
+commit_message = "chore(release): {version}"
+tag_format = "v{version}"
+build_command = ""
+upload_to_pypi = false
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"
+
+[tool.semantic_release.remote]
+type = "github"
