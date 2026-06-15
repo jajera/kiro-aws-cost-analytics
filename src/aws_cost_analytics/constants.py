@@ -1,0 +1,41 @@
+"""Public constants for CLI and MCP tool contracts."""
+
+MCP_SERVER_NAME = "aws-cost-analytics"
+
+TOOL_GET_COST_SUMMARY = "get-cost-summary"
+TOOL_GET_COST_BY_USAGE_TYPE = "get-cost-by-usage-type"
+TOOL_GET_COST_BY_REGION = "get-cost-by-region"
+TOOL_GET_COST_TREND = "get-cost-trend"
+TOOL_GET_KIRO_COST_SUMMARY = "get-kiro-cost-summary"
+TOOL_RECONCILE_BILLING = "reconcile-billing"
+
+TOOL_NAMES = frozenset(
+    {
+        TOOL_GET_COST_SUMMARY,
+        TOOL_GET_COST_BY_USAGE_TYPE,
+        TOOL_GET_COST_BY_REGION,
+        TOOL_GET_COST_TREND,
+        TOOL_GET_KIRO_COST_SUMMARY,
+        TOOL_RECONCILE_BILLING,
+    }
+)
+
+BILLING_TOOL_NAMES = frozenset(
+    {
+        TOOL_GET_KIRO_COST_SUMMARY,
+        TOOL_RECONCILE_BILLING,
+    }
+)
+
+BEDROCK_TOOL_NAMES = TOOL_NAMES - BILLING_TOOL_NAMES
+
+VALID_GRANULARITIES = frozenset({"DAILY", "MONTHLY"})
+VALID_GROUP_BY = frozenset({"USAGE_TYPE", "REGION"})
+
+DEFAULT_ROLLING_DAYS = 30
+MIN_ROLLING_DAYS = 1
+MAX_ROLLING_DAYS = 365
+
+DEFAULT_CACHE_TTL_HOURS = 24
+MIN_CACHE_TTL_HOURS = 1
+MAX_CACHE_TTL_HOURS = 168

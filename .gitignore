@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.hypothesis/
+*.egg-info/
+dist/
+build/
+
+# Local MCP and AWS config (never commit credentials or personal profiles)
+.kiro/settings/mcp.json
+mcp.json
+config.json
+
+# Legacy cache dir (pre-0.2.0); runtime cache is ~/.cache/aws-cost-analytics/
+reports/
